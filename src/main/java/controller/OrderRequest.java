@@ -62,7 +62,7 @@ public class OrderRequest implements HttpHandler {
                     if (dataBase.addOrder(id)) {
                         yield 200;
                     } else {
-                        yield 200;
+                        yield 400;
                     }
                 }
                 case "/order/changeStatus" -> {

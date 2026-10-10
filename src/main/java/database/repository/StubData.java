@@ -37,7 +37,7 @@ public class StubData implements Datable {
         Food[] temp = new Food[id.length];
         int counter = 0;
         for (int i : id) {
-            if (i > foods.size() || i < 0) {
+            if (i >= foods.size() || i < 0) {
                 return false;
             }
             temp[counter++] = foods.get(i);
