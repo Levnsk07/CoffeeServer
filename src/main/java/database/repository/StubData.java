@@ -40,7 +40,7 @@ public class StubData implements Datable {
             if (i >= foods.size() || i < 0) {
                 return false;
             }
-            temp[counter++] = foods.get(i);
+            temp[counter++] = foods.get(i).copy(); // now not linked
         }
 
         orders.add(new Order(freeId++, temp, 0));

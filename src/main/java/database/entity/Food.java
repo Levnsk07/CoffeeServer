@@ -8,17 +8,6 @@ public class Food {
 
     private int sale;
 
-    public int getSale() {
-        return sale;
-    }
-
-    public int getFinalPrice(){
-        return (int)(price - (price/100.0)*sale);
-    }
-
-    public void setSale(int sale) {
-        this.sale = sale;
-    }
 
     public Food(int ID, String name, int price) {
         this.ID = ID;
@@ -32,6 +21,10 @@ public class Food {
         this.name = name;
         this.price = price;
         this.sale = sale;
+    }
+
+    public Food copy() {
+        return new Food(ID, name, price, sale);
     }
 
     @Override
@@ -54,5 +47,18 @@ public class Food {
     public int getPrice() {
         return price;
 //        return (int)(price - (price/100.0)*sale);
+    }
+
+
+    public int getSale() {
+        return sale;
+    }
+
+    public int getFinalPrice() {
+        return (int) (price - (price / 100.0) * sale);
+    }
+
+    public void setSale(int sale) {
+        this.sale = sale;
     }
 }

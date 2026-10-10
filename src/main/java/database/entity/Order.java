@@ -4,18 +4,29 @@ public class Order {
 
     private final int ID;
     private Food[] foods;
-    private int status; // 0 - inQueue | 1 - inProgress | 2 - Done
+    private int status;         // 0 - inQueue | 1 - inProgress | 2 - Done
     private int finalPrice;
 
 
     public Order(int ID, Food[] foods, int status) {
         this.ID = ID;
         this.foods = foods;
-        this.status = status%4;
+        this.status = status % 4;
 
         for (Food f : foods) {
             finalPrice += f.getFinalPrice();
         }
+    }
+
+    private Order(int ID, Food[] foods, int status, int finalPrice) {
+        this.ID = ID;
+        this.foods = foods;
+        this.status = status % 4;
+        this.finalPrice = finalPrice;
+    }
+
+    public Order copy() {
+        return new Order(ID, foods, status, finalPrice);
     }
 
     public int getFinalPrice() {
