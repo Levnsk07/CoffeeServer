@@ -15,6 +15,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
+@Deprecated(since = "2.0", forRemoval = true)
 public class Requests implements HttpHandler {
 
     private final Datable dataBase;
