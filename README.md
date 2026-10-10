@@ -37,6 +37,7 @@
 
 # TODO
 - [X] Remake [Requests.java](src/main/java/controller/Requests.java), must be more divided 
+  - [ ] Make new layer: Service for food and orders, _protect database from controller_ 
 - [ ] Make Admin and seller command _(with special key)_, for change food menu and orders queue
 - [ ] Replace [StubData.java](src/main/java/database/repository/StubData.java) with full database _(maybe SQL, idk yet)_
 - [ ] Create Tests _(JUnit?)_
