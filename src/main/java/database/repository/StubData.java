@@ -6,7 +6,7 @@ import database.entity.Order;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Deprecated(since = "2.0.1", forRemoval = true)
 //TIP это класс "затычка" Необходимо заменить на более подходящую базу данных (например sql)
 public class StubData implements Datable {
 
@@ -42,10 +42,17 @@ public class StubData implements Datable {
             }
             temp[counter++] = foods.get(i).copy(); // now not linked
         }
-
         orders.add(new Order(freeId++, temp, 0));
-
-
         return true;
+    }
+
+    @Override
+    public boolean removeOrder(int ID) {
+        return false;
+    }
+
+    @Override
+    public boolean changeOrderStatus(int ID) {
+        return false;
     }
 }
