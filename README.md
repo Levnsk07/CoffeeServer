@@ -30,6 +30,8 @@
       - `/getOrders` - get current order queue
     - POST
       - `/addOrder` - add new order in queue
+> [!Warning]
+> Example is old
 - Example, with linux like client: 
   - `$ curl -X GET http://localhost:25565/getFood | jq`
   - `$ curl -X GET http://localhost:25565/getOrders | jq`
@@ -39,6 +41,5 @@
 - [X] Remake [Requests.java](src/main/java/controller/Requests.java), must be more divided 
   - [ ] Make new layer: Service for food and orders, _protect database from controller_ 
 - [ ] Make Admin and seller command _(with special key)_, for change food menu and orders queue
-- [ ] Replace [StubData.java](src/main/java/database/repository/StubData.java) with full database _(maybe SQL, idk yet)_
-- [ ] Create Tests _(JUnit?)_
-- [ ] 
+- [X] Replace [StubData.java](src/main/java/database/repository/StubData.java) with full database _(maybe SQL, idk yet)_
+  - [ ] make remove and update func in services (need auth)
